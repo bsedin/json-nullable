@@ -27,32 +27,32 @@ type NullTime struct {
 	Valid bool
 }
 
-func (c *NullString) MarshalJSON() ([]byte, error) {
-	if !c.Valid {
+func (ns *NullString) MarshalJSON() ([]byte, error) {
+	if !ns.Valid {
 		return json.Marshal(nil)
 	}
-	return json.Marshal(c.String)
+	return json.Marshal(ns.String)
 }
 
-func (c *NullInt64) MarshalJSON() ([]byte, error) {
-	if !c.Valid {
+func (ni *NullInt64) MarshalJSON() ([]byte, error) {
+	if !ni.Valid {
 		return json.Marshal(nil)
 	}
-	return json.Marshal(c.Int64)
+	return json.Marshal(ni.Int64)
 }
 
-func (c *NullFloat64) MarshalJSON() ([]byte, error) {
-	if !c.Valid {
+func (nf *NullFloat64) MarshalJSON() ([]byte, error) {
+	if !nf.Valid {
 		return json.Marshal(nil)
 	}
-	return json.Marshal(c.Float64)
+	return json.Marshal(nf.Float64)
 }
 
-func (c *NullBool) MarshalJSON() ([]byte, error) {
-	if !c.Valid {
+func (nb *NullBool) MarshalJSON() ([]byte, error) {
+	if !nb.Valid {
 		return json.Marshal(nil)
 	}
-	return json.Marshal(c.Bool)
+	return json.Marshal(nb.Bool)
 }
 
 func (nt *NullTime) Scan(value interface{}) error {
